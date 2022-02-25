@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="resources/css/estilos.css" rel="stylesheet" type="text/css">    
+    <link rel="stylesheet" href="resources/css/estilos_registro.css">
+    <title>Registrarse</title>
+</head>
+<body>
+    <script src="resources/js/menu.js"></script>
+    <nav class="menu">
+        <label class="logo">Clinica PS</label>
+        <ul class="menu_items">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="login">Ingresar</a></li>
+            <li class="active"><a href="">Registrarse</a></li>
+            <li><a href="citas">Citas</a></li>
+            <li><a href="contacto">Contacto</a></li>
+        </ul>
+        <span class="btn_menu">
+            <i class="fa fa-bars"></i>
+        </span>
+    </nav>
+<div class="cuerpo">
+    <div class="container">
+        <div class="title">Formulario de Registro</div>
+        <form action="/register" method="POST">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Nombre Completo</span>
+                    <input type="text" name="name" placeholder="Ingresa tu nombre" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Cedula</span>
+                    <input type="text" name="id" placeholder="Ingresa tu cedula" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Fecha de Nacimiento</span>
+                    <input type="date" name="date" id="start" name="trip-start" value="2003-01-01" min="1921-01-01" max="2021-11-31" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Genero</span>
+                    <input type="text" name="gender" placeholder="Ingresa tu genero" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Dirección</span>
+                    <input type="text" name="address" placeholder="Ingresa tu dirección" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Telefono</span>
+                    <input type="text" name="telephone" placeholder="Ingresa tu telefono de contacto" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Correo</span>
+                    <input type="email" name="email" placeholder="Ingresa tu correo electronico" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Contraseña</span>
+                    <input type="password" name="password" placeholder="Ingresa tu contraseña" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirmar Contraseña</span>
+                    <input type="password" placeholder="Confirma tu contraseña" required>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Registrar">
+            </div>
+            <div style="display: inline;">
+                <a href="/" class="btn-cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="footer-left">
+            <label class="logo-footer">Clinica PS</label>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quibusdam accusamus 
+                voluptatibus sapiente vitae</p>
+        <div class="socials">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+        </div>
+        </div>
+        </div>
+        <ul class="footer-right">
+            <li>
+                <h2>Consultas</h2>
+                <ul class="box">
+                    <li><a href="#">Odontología</a></li>
+                    <li><a href="#">oftalmología</a></li>
+                    <li><a href="#">Medicina General</a></li>
+                    <li><a href="#">Cirugía</a></li>
+                </ul>
+            </li>
+            <li class="features">
+                <h2>Elaborado por:</h2>
+                <ul class="box">
+                    <li>Albin Ramirez</li>
+                    <li>Andres Castillo</li>
+                    <li>German Matheus</li>
+                    <li>Johan Struve</li>
+                </ul>
+            </li>
+            <li>
+                <h2>Dirección</h2>
+                <ul class="box">
+                    <li>Venezuela</li>
+                    <li>Maracaibo, estado Zulia</li>
+                    <li>Año 2021, Ing. del Software URBE</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="footer-bottom">
+            <p>Todos los derechos reservados por &copy; Urbe 2021</p>
+        </div>
+      </footer>
+      <!--sweetAlert-->
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+      <% if(typeof alert != "undefined") { %>
+        <script>
+            Swal.fire({
+                title: '<%=  alertTitle %>',
+                text: '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton: <%= showConfirmButton %>,
+                timer: <%= timer %>
+            }).then(()=>{
+                window.location = '/ <%= ruta %>'
+            })
+            <% } %>
+        </script>
+      
+</body>
+</html>
+
+<!--
+    <label for="rol"</label>
+        <select name="rol" id="rol" class="">
+            <option value="admin" selected></option>
+-->
